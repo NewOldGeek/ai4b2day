@@ -37,29 +37,35 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-white">
-      {/* Header */}
-      <header className="container mx-auto px-4 py-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <img 
-              src="/lovable-uploads/fa6ecb54-4307-4e30-b31a-35af7c79eb28.png" 
-              alt="AI for Business Today" 
-              className="h-24 w-auto"
-            />
-            <div className="text-3xl font-bold text-gray-800">
-              aiforbusinesstoday.com
-            </div>
-          </div>
-          <div className="flex items-center space-x-4">
-            <a 
-              href="https://instagram.com/aiforbusinesstoday" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-green-600 hover:text-green-700 transition-colors"
-            >
-              <Instagram className="h-6 w-6" />
-            </a>
-          </div>
+      {/* Header with Background Image */}
+      <header 
+        className="relative py-24 bg-cover bg-center"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3882&q=80")'
+        }}
+      >
+        {/* White overlay at 80% opacity */}
+        <div className="absolute inset-0 bg-white bg-opacity-80"></div>
+        
+        {/* Logo centered */}
+        <div className="relative z-10 flex justify-center items-center">
+          <img 
+            src="/lovable-uploads/fa6ecb54-4307-4e30-b31a-35af7c79eb28.png" 
+            alt="AI for Business Today" 
+            className="h-48 w-auto"
+          />
+        </div>
+        
+        {/* Instagram link in top right */}
+        <div className="absolute top-6 right-6 z-20">
+          <a 
+            href="https://instagram.com/aiforbusinesstoday" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-green-600 hover:text-green-700 transition-colors"
+          >
+            <Instagram className="h-6 w-6" />
+          </a>
         </div>
       </header>
 
