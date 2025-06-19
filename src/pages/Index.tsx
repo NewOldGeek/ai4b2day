@@ -40,13 +40,13 @@ const Index = () => {
       {/* Header */}
       <header className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-4">
             <img 
               src="/lovable-uploads/fa6ecb54-4307-4e30-b31a-35af7c79eb28.png" 
               alt="AI for Business Today" 
-              className="h-12 w-auto"
+              className="h-24 w-auto"
             />
-            <div className="text-2xl font-bold text-gray-800">
+            <div className="text-3xl font-bold text-gray-800">
               aiforbusinesstoday.com
             </div>
           </div>
@@ -253,7 +253,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/fa6ecb54-4307-4e30-b31a-35af7c79eb28.png" 
                   alt="AI for Business Today" 
-                  className="h-8 w-auto"
+                  className="h-12 w-auto"
                 />
                 <div className="text-xl font-bold">AI for Business Today</div>
               </div>
