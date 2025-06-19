@@ -51,7 +51,7 @@ const Index = () => {
           <img 
             src="/lovable-uploads/f5e152d9-3466-4d7a-85d1-25980a2c497c.png" 
             alt="AI for Business Today" 
-            className="h-48 w-auto"
+            className="w-3/5 h-auto max-w-none"
           />
         </div>
         
