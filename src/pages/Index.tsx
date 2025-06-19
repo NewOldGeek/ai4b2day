@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -50,7 +49,7 @@ const Index = () => {
         {/* Logo centered */}
         <div className="relative z-10 flex justify-center items-center">
           <img 
-            src="/lovable-uploads/fa6ecb54-4307-4e30-b31a-35af7c79eb28.png" 
+            src="/lovable-uploads/f5e152d9-3466-4d7a-85d1-25980a2c497c.png" 
             alt="AI for Business Today" 
             className="h-48 w-auto"
           />
@@ -257,7 +256,7 @@ const Index = () => {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <img 
-                  src="/lovable-uploads/fa6ecb54-4307-4e30-b31a-35af7c79eb28.png" 
+                  src="/lovable-uploads/f5e152d9-3466-4d7a-85d1-25980a2c497c.png" 
                   alt="AI for Business Today" 
                   className="h-12 w-auto"
                 />
