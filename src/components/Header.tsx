@@ -1,0 +1,39 @@
+
+import { Instagram } from "lucide-react";
+
+const Header = () => {
+  return (
+    <header 
+      className="relative py-24 bg-cover bg-center"
+      style={{
+        backgroundImage: 'url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3882&q=80")'
+      }}
+    >
+      {/* White overlay at 80% opacity */}
+      <div className="absolute inset-0 bg-white bg-opacity-80"></div>
+      
+      {/* Logo centered */}
+      <div className="relative z-10 flex justify-center items-center">
+        <img 
+          src="/lovable-uploads/f5e152d9-3466-4d7a-85d1-25980a2c497c.png" 
+          alt="AI for Business Today" 
+          className="w-3/5 h-auto max-w-none"
+        />
+      </div>
+      
+      {/* Instagram link in top right */}
+      <div className="absolute top-6 right-6 z-20">
+        <a 
+          href="https://instagram.com/ai4b2day" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-green-600 hover:text-green-700 transition-colors"
+        >
+          <Instagram className="h-6 w-6" />
+        </a>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
