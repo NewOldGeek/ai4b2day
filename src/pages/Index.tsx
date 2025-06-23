@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,14 +6,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Users, BookOpen, Mic, Instagram, Mail, Phone, ArrowRight, Calendar, Clock, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const Index = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !name) {
       toast({
@@ -22,16 +26,42 @@ const Index = () => {
       });
       return;
     }
-    
-    toast({
-      title: "Thank you for your interest!",
-      description: "We'll be in touch soon with exclusive AI insights.",
-    });
-    
-    // Reset form
-    setEmail("");
-    setName("");
-    setCompany("");
+
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'service_eptysxn',
+        'template_3twd94h',
+        {
+          name: name,
+          email: email,
+          Phone: phone,
+          company: company,
+        },
+        'DvSabakc7wadOFZ1l'
+      );
+
+      toast({
+        title: "Thank you for your interest!",
+        description: "We'll be in touch soon with exclusive AI insights.",
+      });
+      
+      // Reset form
+      setEmail("");
+      setName("");
+      setPhone("");
+      setCompany("");
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -102,6 +132,7 @@ const Index = () => {
                   onChange={(e) => setName(e.target.value)}
                   className="border-gray-300 focus:border-green-500 focus:ring-green-500"
                   required
+                  disabled={isSubmitting}
                 />
                 <Input
                   type="email"
@@ -110,6 +141,15 @@ const Index = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   className="border-gray-300 focus:border-green-500 focus:ring-green-500"
                   required
+                  disabled={isSubmitting}
+                />
+                <Input
+                  type="tel"
+                  placeholder="Phone Number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="border-gray-300 focus:border-green-500 focus:ring-green-500"
+                  disabled={isSubmitting}
                 />
                 <Input
                   type="text"
@@ -117,12 +157,15 @@ const Index = () => {
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                   className="border-gray-300 focus:border-green-500 focus:ring-green-500"
+                  disabled={isSubmitting}
                 />
                 <Button 
                   type="submit" 
                   className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 text-lg transition-all duration-300 hover:shadow-lg"
+                  disabled={isSubmitting}
                 >
-                  Get Exclusive Access <ArrowRight className="ml-2 h-5 w-5" />
+                  {isSubmitting ? "Submitting..." : "Get Exclusive Access"} 
+                  {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
                 </Button>
               </form>
             </CardContent>
