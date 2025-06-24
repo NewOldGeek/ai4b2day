@@ -1,5 +1,5 @@
 
-import { Mail, Instagram } from "lucide-react";
+import { Mail, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -23,8 +23,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
             <div className="space-y-2">
               <div className="flex items-center">
-                <Mail className="h-5 w-5 text-green-500 mr-2" />
+                <Mail className="h-5 w-5 text-[#1877f2] mr-2" />
                 <span className="text-gray-400">info@aiforbusinesstoday.com</span>
+              </div>
+              <div className="flex items-center">
+                <Twitter className="h-5 w-5 text-[#1877f2] mr-2" />
+                <a 
+                  href="https://twitter.com/ai4b2day" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  @ai4b2day
+                </a>
               </div>
               <div className="flex items-center">
                 <Instagram className="h-5 w-5 text-green-500 mr-2" />
