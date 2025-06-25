@@ -1,4 +1,3 @@
-
 import { Mail, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
@@ -9,7 +8,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/lovable-uploads/f5e152d9-3466-4d7a-85d1-25980a2c497c.png" 
+                src="/lovable-uploads/0543176a-f423-4f42-ba57-1038f41a1aaa.png" 
                 alt="AI for Business Today" 
                 className="h-12 w-auto"
               />

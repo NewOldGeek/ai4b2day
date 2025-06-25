@@ -13,9 +13,9 @@ const Header = () => {
       <div className="absolute inset-0 bg-white bg-opacity-80"></div>
 
       {/* Logo centered and higher up */}
-      <div className="relative z-10 flex justify-center items-center h-full">
+      <div className="relative z-10 flex justify-center items-center h-full md:pb-16">
         <img 
-          src="/lovable-uploads/f5e152d9-3466-4d7a-85d1-25980a2c497c.png" 
+          src="/lovable-uploads/0543176a-f423-4f42-ba57-1038f41a1aaa.png" 
           alt="AI for Business Today" 
           className="w-2/5 h-auto max-w-none"
         />
